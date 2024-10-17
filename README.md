@@ -5,8 +5,6 @@ Welcome to the **Backend Developer Challenges Repository!** This repository cont
 ## Table of Contents
 
 - [Challenges](#challenges)
-  - [Challenge 1: User Registration](#challenge-1-user-registration)
-  - [Challenge 2: Task Management System](#challenge-2-task-management-system)
 - [Instructions for Candidates](#instructions-for-candidates)
 - [Recommended Technologies](#recommended-technologies)
 - [Final Considerations](#final-considerations)
