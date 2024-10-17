@@ -19,17 +19,17 @@ This challenge tests your ability to create models and API endpoints using Djang
 
 Here’s an example structure of your project:
 
-    ```
-    blog_api/
-    ├── blog/
-    │   ├── models.py
-    │   ├── serializers.py
-    │   ├── views.py
-    │   └── urls.py
-    ├── blog_api/
-    │   └── settings.py
-    └── manage.py
-    ```
+```
+blog_api/
+├── blog/
+│   ├── models.py
+│   ├── serializers.py
+│   ├── views.py
+│   └── urls.py
+├── blog_api/
+│   └── settings.py
+└── manage.py
+```
 
 ## Step-by-Step Guide
 
@@ -54,53 +54,53 @@ Here’s an example structure of your project:
 In `serializers.py`, create a serializer to convert the model into JSON format.
 
 ```python
-    from rest_framework import serializers
-    from .models import Post
+from rest_framework import serializers
+from .models import Post
 
-    class PostSerializer(serializers.ModelSerializer):
-    class Meta:
-    model = Post
-    fields = ['id', 'title', 'content', 'created_at']
+class PostSerializer(serializers.ModelSerializer):
+class Meta:
+model = Post
+fields = ['id', 'title', 'content', 'created_at']
 ```
 
 3. Create the Views:
 
 In `views.py`, define the views for creating and listing posts using **Django REST Framework**.
 
-    ```python
+```python
 
-    from rest_framework.response import Response
-    from rest_framework.decorators import api_view
-    from .models import Post
-    from .serializers import PostSerializer
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from .models import Post
+from .serializers import PostSerializer
 
-    @api_view(['GET', 'POST'])
-    def post_list_create(request):
-    if request.method == 'GET':
-    posts = Post.objects.all()
-    serializer = PostSerializer(posts, many=True)
-    return Response(serializer.data)
+@api_view(['GET', 'POST'])
+def post_list_create(request):
+if request.method == 'GET':
+posts = Post.objects.all()
+serializer = PostSerializer(posts, many=True)
+return Response(serializer.data)
 
-        elif request.method == 'POST':
-            serializer = PostSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=201)
-            return Response(serializer.errors, status=400)
-    ```
+    elif request.method == 'POST':
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+```
 
 Create the URL Routes:
 
 In `urls.py`, set up the routes for the API.
 
-    ```python
-    from django.urls import path
-    from . import views
+```python
+from django.urls import path
+from . import views
 
-    urlpatterns = [
-    path('posts/', views.post_list_create, name='post-list-create'),
-    ]
-    ```
+urlpatterns = [
+path('posts/', views.post_list_create, name='post-list-create'),
+]
+```
 
 ## Validation
 
