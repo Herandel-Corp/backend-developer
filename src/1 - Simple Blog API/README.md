@@ -1,4 +1,4 @@
-# Challenge 1: Simple Blog API
+# Challenge: Simple Blog API
 
 ## Description
 
