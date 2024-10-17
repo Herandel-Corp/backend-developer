@@ -31,7 +31,8 @@ blog_api/
 └── manage.py
 ```
 
-## Step-by-Step Guide
+<details>
+<summary>📝 Step-by-Step Guide</summary>
 
 1. **Create the `Post` Model**:
 
@@ -101,6 +102,8 @@ blog_api/
     path('posts/', views.post_list_create, name='post-list-create'),
     ]
 ```
+
+</details>
 
 ## Validation
 

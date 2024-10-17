@@ -31,7 +31,8 @@ Here’s an example structure of your project:
     └── manage.py
 ```
 
-## Step-by-Step Guide
+<details>
+<summary>📝 Step-by-Step Guide</summary>
 
 1. **Create the `Task` Model:**:
 
@@ -109,6 +110,8 @@ Here’s an example structure of your project:
         path('tasks/<int:pk>/delete/', views.task_delete, name='task-delete'),
     ]
 ```
+
+</details>
 
 ## Validation
 
