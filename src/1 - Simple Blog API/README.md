@@ -53,6 +53,7 @@ Here’s an example structure of your project:
 
 In `serializers.py`, create a serializer to convert the model into JSON format.
 
+```python
     from rest_framework import serializers
     from .models import Post
 
@@ -60,6 +61,7 @@ In `serializers.py`, create a serializer to convert the model into JSON format.
     class Meta:
     model = Post
     fields = ['id', 'title', 'content', 'created_at']
+```
 
 3. Create the Views:
 
